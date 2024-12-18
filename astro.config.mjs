@@ -4,6 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://blog.ldgni.io/",
+  site: "https://writings.ldgni.io/",
   integrations: [mdx(), sitemap(), tailwind()],
 });
