@@ -4,35 +4,24 @@ description: "macOS development environment setup"
 date: "Jul 22 2024"
 ---
 
-# Table of Contents
+Easy-to-understand instructions for setting up a macOS web development environment.
 
-- [Settings](#settings)
-- [Xcode](#xcode)
-- [Homebrew](#homebrew)
-- [Terminal](#terminal)
-- [Git](#git)
-- [Visual Studio Code](#visual-studio-code)
-- [Node.js](#nodejs)
-- [Utilities](#utilites)
+<h2>Settings</h2>
 
-<hr />
-
-# Settings
-
-## Appearance
+<h3>Appearance</h3>
 
 - Show scroll bars: **Always**
 
-## Desktop & Dock
+<h3>Desktop & Dock</h3>
 
 - Prefer tabs when opening documents: **Always**
 
-## Keyboard
+<h3>Keyboard</h3>
 
 - Key repeat rate: **Fast**
 - Delay until repeat: **Short**
 
-# Xcode
+<h2>Xcode</h2>
 
 Open Terminal and run the following command:
 
@@ -48,7 +37,7 @@ xcode-select -p
 
 The output should be the following: `/Library/Developer/CommandLineTools`
 
-# Homebrew
+<h2>Homebrew</h2>
 
 To install Homebrew, simply run the installation command provided on their <a href="https://brew.sh/" target="_blank">website</a> within the terminal.
 
@@ -62,17 +51,17 @@ brew doctor
 
 The output should be the following: `Your system is ready to brew.`
 
-# Terminal
+<h2>Terminal</h2>
 
-## Oh My Zsh
+<h3>Oh My Zsh</h3>
 
 Install <a href="https://ohmyz.sh/#install" target="_blank">Oh My Zsh</a>.
 
-### Theme
+<h4>Theme</h4>
 
 Get <a href="https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#getting-started" target="_blank">Powerlevel10k</a>.
 
-### Plugins
+<h4>Plugins</h4>
 
 <a
   href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh"
@@ -88,7 +77,7 @@ Get <a href="https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#getting
   zsh-syntax-highlighting
 </a>
 
-# Git
+<h2>Git</h2>
 
 macOS comes with a pre-installed version of Git, but we'll install our own through Homebrew to allow easy upgrades and not interfere with the system version. To do so, simply run:
 
@@ -140,7 +129,7 @@ echo .DS_Store >> ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
-## SSH Key
+<h3>SSH Key</h3>
 
 To create a new SSH key, run the following command inside your terminal. The -C flag followed by your email address ensures that GitHub knows who you are.
 
@@ -163,17 +152,17 @@ Now, go into your GitHub settings > `SSH and GPG keys`. Click `New SSH Key`. Nam
 
 Test the SSH connection by following the instructions <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection" target="_blank">here</a>.
 
-# Visual Studio Code
+<h2>Visual Studio Code</h2>
 
 Get Visual Studio Code from their <a href="https://code.visualstudio.com/" target="_blank">website</a>.
 
 Open the Command Palette and select `Shell Command: Install 'code' command in PATH`.
 
-## Settings & Extensions
+<h3>Settings & Extensions</h3>
 
 Sync your configuration with the integrated `Settings Sync` functionality.
 
-# Node.js
+<h2>Node.js</h2>
 
 Let's grab nvm:
 
@@ -205,7 +194,7 @@ nvm use --lts
 
 Now when you run `node -v`, you should see vXX.xx.x or something similar (with the X’s replaced with actual numbers).
 
-# Utilites
+<h2>Utilites</h2>
 
 - <a href="https://linearmouse.app/" target="_blank">
     LinearMouse
