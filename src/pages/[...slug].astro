@@ -24,9 +24,9 @@ const { Content } = await post.render();
 <PageLayout title={post.data.title} description={post.data.description}>
   <Container>
     <div class="space-y-1 mb-10">
-      <div class="animate text-2xl font-semibold text-black dark:text-white">
+      <h1 class="animate text-2xl text-black dark:text-white tracking-tighter font-bold">
         {post.data.title}
-      </div>
+      </h1>
       <div class="flex justify-between">
         <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
@@ -41,7 +41,7 @@ const { Content } = await post.render();
           <BackToPrev href="/"> Previous </BackToPrev>
         </div>
       </div>
-    </div>
+    </>
     <article class="animate">
       <Content />
     </article>

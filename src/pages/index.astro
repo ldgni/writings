@@ -4,6 +4,7 @@ import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG } from "@consts";
+import Header from "@components/Header.astro";
 
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft)
@@ -12,6 +13,7 @@ const blog = (await getCollection("blog"))
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
+    <Header />
   <Container>
     <div class="space-y-10">
       <ul class="flex flex-col gap-4">
