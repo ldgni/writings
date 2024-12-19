@@ -4,11 +4,14 @@ description: "How to fix the unknown at rule @tailwind warning in VSCode"
 date: "Sep 17 2024"
 ---
 
+import { Image } from "astro:assets";
+import screenshot from "../../../images/unknown-at-rules.jpg";
+
 When working with Tailwind CSS in VSCode, you might encounter the "**Unknown at rule @tailwind**" warning. This happens because VS Code’s default CSS support doesn’t recognize custom at-rules like @tailwind.
 
-<img
-  src="../../../images/unknown-at-rules.jpg"
-  alt="Unknown at rule @tailwind screenshot"
+<Image
+  src={screenshot}
+  alt="Unknown at rule @tailwind warning in VSCode"
   class="rounded"
 />
 
