@@ -24,16 +24,16 @@ const { Content } = await post.render();
 <PageLayout title={post.data.title} description={post.data.description}>
   <Container>
     <div class="space-y-1 mb-10">
-      <h1 class="animate text-2xl text-black dark:text-white tracking-tighter font-bold">
+      <h1 class="animate text-xl text-black dark:text-white tracking-tighter font-bold sm:text-2xl">
         {post.data.title}
       </h1>
-      <div class="flex justify-between">
+      <div class="flex justify-between flex-col sm:flex-row gap-2">
         <div class="animate flex items-center gap-1.5">
-        <div class="font-base text-sm">
+        <div class="font-base text-xs sm:text-sm">
           <FormattedDate date={post.data.date} />
         </div>
         &bull;
-        <div class="font-base text-sm">
+        <div class="font-base text-xs sm:text-sm">
           {readingTime(post.body)}
         </div>
         </div>
