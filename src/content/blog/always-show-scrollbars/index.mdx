@@ -1,0 +1,16 @@
+---
+title: "Always show scrollbars on macOS"
+description: "Why you should always show scrollbars for web development"
+date: "Oct 22 2024"
+---
+
+import { Image } from "astro:assets";
+import screenshot from "../../../images/always-show-scroll-bars.png";
+
+As a web developer, ensuring that your designs and layouts function properly across different environments is crucial. One often-overlooked setting on macOS is to make sure the scroll bars are always showing.
+
+<Image src={screenshot} alt="Always show scrollbars on macOS" class="rounded" />
+
+By default, macOS hides scrollbars until a user interacts with the content. This behavior differs from other operating systems, such as Windows, where scrollbars are always visible. Always showing the scroll bars ensures that you see your website as it might appear to users on systems where scrollbars are permanently displayed. This helps maintain consistent UI testing across platforms.
+
+Scrollbars take up space in the viewport, which can affect how content is displayed. This is particularly true for layouts that rely on flexbox, grid, or precise pixel alignment. Testing with visible scrollbars ensures that your design adapts properly to this additional space, preventing unexpected overflow or clipping.
