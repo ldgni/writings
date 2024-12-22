@@ -6,5 +6,6 @@ export const SITE: Site = {
 
 export const BLOG: Metadata = {
   TITLE: "My writings",
-  DESCRIPTION: "A collection of articles on topics I am passionate about",
+  DESCRIPTION:
+    "A collection of articles on topics that interest me, including web development, technology, and more.",
 };
