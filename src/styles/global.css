@@ -39,7 +39,7 @@ footer {
 }
 
 article {
-  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto tracking-tighter;
+  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto tracking-tight;
   @apply prose-headings:font-semibold;
   @apply prose-headings:text-black prose-headings:dark:text-white;
   @apply prose-h2:my-6 prose-headings:my-4;
