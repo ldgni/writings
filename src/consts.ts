@@ -1,8 +1,4 @@
-import type { Site, Metadata } from "@types";
-
-export const SITE: Site = {
-  NAME: "My writings",
-};
+import type { Metadata } from "@types";
 
 export const BLOG: Metadata = {
   TITLE: "My writings",
