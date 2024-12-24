@@ -1,0 +1,30 @@
+---
+title: "Fix USB drive split into multiple partitions"
+description: "How to fix USB drive showing as multiple partitions in Windows"
+date: "Nov 12 2024"
+---
+
+import { Image } from "astro:assets";
+import screenshot from "../../../images/usb-multiple-partitions.png";
+
+When you plug in a USB drive, you expect to see a single drive letter in Windows File Explorer. However, sometimes the USB drive shows up as multiple partitions, which can be confusing. This issue usually occurs when the USB drive has been partitioned incorrectly or has a corrupted partition table.
+
+<Image
+  src={screenshot}
+  alt="USB drive showing as multiple partitions"
+  class="rounded"
+/>
+
+We will use the <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart" target="_blank">diskpart</a> utility to fix this issue. It's a command-line disk partitioning tool that comes built-in with Windows. Here's how you can fix a USB drive showing as multiple partitions:
+
+0. Before proceeding, make sure to back up any important data on the USB drive as this process will erase all existing partitions.
+1. Press `Win + X` and select **Command Prompt (Admin)** to open an elevated Command Prompt window.
+2. Type `diskpart` and press Enter to run the diskpart utility.
+3. Run `list disk` to display a list of all disks connected to your computer.
+4. Identify the disk number of your USB drive (it's usually the smallest capacity disk) and run `select disk X` (replace X with the disk number).
+5. Run `clean` to remove all partitions and volumes from the USB drive.
+6. Create a new partition by running `create partition primary`.
+7. Run `select partition 1` to select the newly created partition.
+8. Format the partition by running `format quick` to prepare it for use.
+
+After following these steps, your USB drive should now appear as a single partition in Windows File Explorer. If you encounter any issues or the problem persists, you may need to use third-party partitioning tools to fix the USB drive.
