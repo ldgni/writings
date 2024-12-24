@@ -5,23 +5,35 @@ import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG } from "@consts";
 
-
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
+const groupedByYear = blog.reduce((acc: { [key: number]: typeof blog }, post) => {
+  const year = post.data.date.getFullYear();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+}, {});
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
-      <ul class="flex flex-col gap-4">
-        {blog.map(post => (
-          <li>
-            <ArrowCard entry={post} />
-          </li>
-        ))}
-      </ul>
+      {Object.keys(groupedByYear).map(Number).sort((a, b) => b - a).map(year => (
+        <div>
+          <h2 class="text-xl mb-4 font-bold">{year}</h2>
+          <ul class="flex flex-col gap-4">
+            {groupedByYear[year].map(post => (
+              <li data-key={post.slug}>
+                <ArrowCard entry={post} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   </Container>
 </PageLayout>
